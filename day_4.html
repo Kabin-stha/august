@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day4</title>
+    <style>
+      .form-container {
+        border: 2px solid #000;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post" class="form-container" onsubmit="return calculateSum()">
+      <h2>Two Number Adder</h2>
+      <br />
+      <label for="num1">Number 1:</label><br />
+      <input type="number" id="num1" /><br /><br />
+      <label for="num2">Number 2:</label><br />
+      <input type="number" id="num2" /><br /><br />
+      <button type="submit">Submit</button><br /><br />
+      <label for="result">Result:</label>
+      <span id="result"></span>
+    </form>
+
+    <script>
+      function calculateSum() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Please enter valid numbers.");
+        }
+
+        const sum = num1 + num2;
+
+        document.getElementById("result").textContent = sum;
+        alert(sum);
+        console.log("Number1");
+        console.log("Number2");
+
+        return false;
+      }
+    </script>
+  </body>
+</html>
